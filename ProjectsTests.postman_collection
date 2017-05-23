@@ -1,0 +1,394 @@
+{
+	"variables": [],
+	"info": {
+		"name": "ProjectsTests",
+		"_postman_id": "b431ac2c-617c-888b-8ef8-2b95f3e24623",
+		"description": "CreateProject\nRequestProject",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "createProject-happyPath-project1-cost1.0",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"Body matches string\"] = responseBody.has(\"campaign is successfully created\");"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/createProject",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{  \n    \"id\": 1,  \n    \"projectName\": \"test project number 1\",  \n    \"creationDate\": \"05112017 00:00:00\",  \n    \"expiryDate\": \"06112017 00:00:00\",  \n    \"enabled\": true,  \n    \"targetCountries\": [\"USA\", \"CANADA\", \"MEXICO\", \"BRAZIL\"],  \n    \"projectCost\": 1.0,  \n    \"projectUrl\": \"http://www.unity.com\",  \n    \"targetKeys\": [{  \n            \"number\": 20,  \n            \"keyword\": \"movie\"  \n        },  \n        {  \n            \"number\": 29,  \n            \"keyword\": \"sports\"  \n        }]  \n} "
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "createProject-happyPath-project2-cost2.0-expiryDate0519",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"Body matches string\"] = responseBody.has(\"campaign is successfully created\");"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/createProject",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{  \n    \"id\": 2,  \n    \"projectName\": \"test project number 2\",  \n    \"creationDate\": \"05112017 00:00:00\",  \n    \"expiryDate\": \"05192017 00:00:00\",  \n    \"enabled\": true,  \n    \"targetCountries\": [\"USA\", \"CANADA\", \"MEXICO\", \"BRAZIL\"],  \n    \"projectCost\": 2.0,  \n    \"projectUrl\": \"http://www.unity.com\",  \n    \"targetKeys\": [{  \n            \"number\": 25,  \n            \"keyword\": \"movie\"  \n        },  \n        {  \n            \"number\": 29,  \n            \"keyword\": \"sports\"  \n        }]  \n} "
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "createProject-happyPath-project3-cost3.0-disabled",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"Body matches string\"] = responseBody.has(\"campaign is successfully created\");"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/createProject",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{  \n    \"id\": 3,  \n    \"projectName\": \"test project number 3\",  \n    \"creationDate\": \"05112017 00:00:00\",  \n    \"expiryDate\": \"06112017 00:00:00\",  \n    \"enabled\": false,  \n    \"targetCountries\": [\"USA\", \"CANADA\", \"MEXICO\", \"BRAZIL\"],  \n    \"projectCost\": 3.0,  \n    \"projectUrl\": \"http://www.unity.com\",  \n    \"targetKeys\": [{  \n            \"number\": 25,  \n            \"keyword\": \"movie\"  \n        },  \n        {  \n            \"number\": 29,  \n            \"keyword\": \"sports\"  \n        }]  \n} "
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "createProject-happyPath-project4-cost4.0-urlNull",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"Body matches string\"] = responseBody.has(\"campaign is successfully created\");"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/createProject",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{  \n    \"id\": 4,  \n    \"projectName\": \"test project number 4\",  \n    \"creationDate\": \"05112017 00:00:00\",  \n    \"expiryDate\": \"06012017 00:00:00\",  \n    \"enabled\": true,  \n    \"targetCountries\": [\"USA\", \"CANADA\", \"MEXICO\", \"BRAZIL\"],  \n    \"projectCost\": 4.0,  \n    \"projectUrl\": null,  \n    \"targetKeys\": [{  \n            \"number\": 25,  \n            \"keyword\": \"movie\"  \n        },  \n        {  \n            \"number\": 29,  \n            \"keyword\": \"sports\"  \n        }]  \n} "
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "createProject-happyPath-project5-cost5.0-numberMin40",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"Body matches string\"] = responseBody.has(\"campaign is successfully created\");"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/createProject",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{  \n    \"id\": 5,  \n    \"projectName\": \"test project number 5\",  \n    \"creationDate\": \"05112017 00:00:00\",  \n    \"expiryDate\": \"06012017 00:00:00\",  \n    \"enabled\": true,  \n    \"targetCountries\": [\"USA\", \"CANADA\", \"MEXICO\", \"BRAZIL\"],  \n    \"projectCost\": 5.0,  \n    \"projectUrl\": null,  \n    \"targetKeys\": [{  \n            \"number\": 40,  \n            \"keyword\": \"movie\"  \n        },  \n        {  \n            \"number\": 50,  \n            \"keyword\": \"sports\"  \n        }]  \n} "
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "createProject-happyPath-project6-cost6.0-CountryContainsChina",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"Body matches string\"] = responseBody.has(\"campaign is successfully created\");"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/createProject",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{  \n    \"id\": 6,  \n    \"projectName\": \"test project number 6\",  \n    \"creationDate\": \"05112017 00:00:00\",  \n    \"expiryDate\": \"06012017 00:00:00\",  \n    \"enabled\": true,  \n    \"targetCountries\": [\"USA\", \"CANADA\", \"MEXICO\", \"BRAZIL\", \"CHINA\"],  \n    \"projectCost\": 6.0,  \n    \"projectUrl\": \"http://www.unity.com6\",  \n    \"targetKeys\": [{  \n            \"number\": 25,  \n            \"keyword\": \"movie\"  \n        },  \n        {  \n            \"number\": 29,  \n            \"keyword\": \"sports\"  \n        }]  \n} "
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "createProject-happyPath-project7-cost7.0-min40",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"Body matches string\"] = responseBody.has(\"campaign is successfully created\");"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/createProject",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{  \n    \"id\": 7,  \n    \"projectName\": \"test project number 7\",  \n    \"creationDate\": \"05112017 00:00:00\",  \n    \"expiryDate\": \"06112017 00:00:00\",  \n    \"enabled\": true,  \n    \"targetCountries\": [\"USA\", \"CANADA\", \"MEXICO\", \"BRAZIL\"],  \n    \"projectCost\": 7.0,  \n    \"projectUrl\": \"http://www.unity.com\",  \n    \"targetKeys\": [{  \n            \"number\": 40,  \n            \"keyword\": \"movie\"  \n        },  \n        {  \n            \"number\": 41,  \n            \"keyword\": \"sports\"  \n        }]  \n} "
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "requestProject-validProjectId",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"Body matches string\"] = responseBody.has(\"test project number 1\");"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/requestProject?projectId=1",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "requestProject-invalidProjectId",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 400\"] = responseCode.code === 400;",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/requestProject?projectId=interesting",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "requestProject-number&keyword",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"Body matches string\"] = responseBody.has(\"test project number 7\");"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/requestProject?number=20&keyword=movie",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "requestProject-urlNull",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"Body matches string\"] = responseBody.has(\"test project number 7\");"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/requestProject",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "requestProject-number40",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"Body matches string\"] = responseBody.has(\"test project number 7\");"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/requestProject?number=40",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "requestProject-country",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"Body matches string\"] = responseBody.has(\"test project number 6\");"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://localhost:8080/requestProject?country=CHINA",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
